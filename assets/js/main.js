@@ -1,48 +1,34 @@
-function largestNumber() {
+// program to find the factorial of a number
+function factorial() {
 
-    // Take number01 from the input
-    const num01 = Number(document.getElementById("number01").value);
+    // Take input from the user
+    const number = Number(document.getElementById("number").value);
 
-    // Take number02 from the input
-    const num02 = Number(document.getElementById("number02").value);
 
-    // Take number03 from the input
-    const num03 = Number(document.getElementById("number03").value);
+    let answer = "";
 
-    
-    // Check the three input numbers which is the largest one.
-
-    let result = "";
-
-    // Check if num01 is largest
-    if (num01 > num02 && num01 > num03) {
-
-        result = `The largest number is : ${num01}`;
-        console.log(result);
-        document.querySelector('#h4').innerHTML = result;
-
-    }
-    // Check if num02 is largest
-    else if (num02 > num01 && num02 > num03) {
-
-        result = `The largest number is : ${num02}`;
-        console.log(result);
-        document.querySelector('#h4').innerHTML = result;
-
-    }
-    // Check if num03 is largest
-    else if (num03 > num01 && num03 > num02) {
-
-        result = `The largest number is : ${num03}`;
-        console.log(result);
-        document.querySelector('#h4').innerHTML = result;
-
-    } else {
-
-        result = `All numbers are equal.`;
-        console.log(result);
-        document.querySelector('#h4').innerHTML = result;
-
+    // checking if number is negative
+    if (number < 0) {
+        answer = 'Error! Factorial for negative number does not exist.';
+        console.log(answer);
+        document.querySelector('#h4').innerHTML = answer;
     }
 
+    // if number is 0
+    else if (number === 0) {
+        answer = `The factorial of ${number} is 1.`;
+        console.log(answer);
+        document.querySelector('#h4').innerHTML = answer;
+    }
+
+    // if number is positive
+    else {
+        let fact = 1;
+        for (let i = 1; i <= number; i++) {
+            fact *= i;
+        }
+        answer = `The factorial of ${number} is ${fact}.`;
+        console.log(answer);
+        document.querySelector('#h4').innerHTML = answer;
+    }
 }
