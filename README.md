@@ -1,2 +1,3 @@
-# find-the-factorial-of-a-number
- Practice Example
+# Find-the-factorial-of-a-number
+JavaScript Practice Example.
+
